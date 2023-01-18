@@ -6,22 +6,22 @@ const headers = {
 };
 
 const articleRequest = async (articleName: string) => {
-  const baseUrl = 'http://localhost:3100/api/v1/articles'
+  const baseUrl = process.env.REACT_APP_API_URL + 'api/v1/articles'
   return axios.get(baseUrl, { params: { name: articleName }, headers })
 }
 
 const saveSearchInput = async (input: string) => {
-  const baseUrl = 'http://localhost:3100/api/v1/search_inputs'
+  const baseUrl = process.env.REACT_APP_API_URL + 'api/v1/search_inputs'
   return axios.post(baseUrl, { input }, { headers })
 }
 
 const updateSearchInput = async (input: string, id: number) => {
-  const baseUrl = 'http://localhost:3100/api/v1/search_inputs/' + id
+  const baseUrl = process.env.REACT_APP_API_URL + 'api/v1/search_inputs/' + id
   return axios.put(baseUrl, { input, headers })
 }
 
 const getSearchInputs = async () => {
-  const baseUrl = 'http://localhost:3100/api/v1/search_inputs'
+  const baseUrl = process.env.REACT_APP_API_URL + 'api/v1/search_inputs'
   return axios.get(baseUrl, { headers })
 }
 
