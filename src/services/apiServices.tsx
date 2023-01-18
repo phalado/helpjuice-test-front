@@ -10,4 +10,19 @@ const articleRequest = async (articleName: string) => {
   return axios.get(baseUrl, { params: { name: articleName }, headers })
 }
 
-export { articleRequest };
+const saveSearchInput = async (input: string) => {
+  const baseUrl = 'http://localhost:3100/api/v1/search_inputs'
+  return axios.post(baseUrl, { input }, { headers })
+}
+
+const updateSearchInput = async (input: string, id: number) => {
+  const baseUrl = 'http://localhost:3100/api/v1/search_inputs/' + id
+  return axios.put(baseUrl, { input, headers })
+}
+
+const getSearchInputs = async () => {
+  const baseUrl = 'http://localhost:3100/api/v1/search_inputs'
+  return axios.get(baseUrl, { headers })
+}
+
+export { articleRequest, saveSearchInput, updateSearchInput, getSearchInputs };
