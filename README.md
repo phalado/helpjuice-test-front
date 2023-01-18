@@ -1,46 +1,77 @@
-# Getting Started with Create React App
+# Helpjuice Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This web app is a search for articles, required by [Helpjuice][helpjuice]
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Helpjuice Test](#helpjuice-test)
+  - [Table of contents](#table-of-contents)
+  - [About](#about)
+  - [The project](#the-project)
+  - [Future works](#future-works)
+  - [Technologies used](#technologies-used)
+  - [Contact](#contact)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## About
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Link to the live version [here][live-version].
 
-### `npm test`
+Repository: https://github.com/phalado/helpjuice-test-front
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Backend: https://github.com/phalado/helpjuice-test-api
 
-### `npm run build`
+Please, star the projects. It makes me happy.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## The project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The requirement was to:
 
-### `npm run eject`
+- Create a search bar to search names of articles that work in real-time
+- Record the search in the database
+- Present the most searched terms
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+I decided to divide the project in two:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- A backend in Ruby on Rails, using Elasticsearch (most specifically, Searchkick) to help in the article and terms searches.
+- A frontend in React using Material UI to create each component.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The frontend was deployed on Netlify and the backend on Heroku.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+You can use it online or run it locally using docker and the Makefile's commands.
 
-## Learn More
+A simple `make build` should do the trick.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Future works
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+One point that I wasn't able to implement is the use of debounce. Right now, each char typed in the search bar triggers a request to the API.
+
+My idea was to use debounce to make only one request each second or 2 seconds but I will need more time to do so.
+
+## Technologies used
+
+To create this project I used:
+
+- React
+- TypeScript
+- Material UI
+- HTML + CSS
+- Netlify
+
+## Contact
+
+Author: Raphael Cordeiro
+
+Follow me on [Twitter][rapha-twitter], visit my [Github portfolio][rapha-github], my [Linkedin][rapha-linkedin], or my [personal portfolio][rapha-personal].
+
+<!-- Links -->
+
+[live-version]: https://helpjuice-test.netlify.app/
+[backend]: https://github.com/phalado/helpjuice-test-api
+[frontend]: https://github.com/phalado/helpjuice-test-front
+[helpjuice]: https://helpjuice.com/
+[rapha-github]: https://github.com/phalado
+[rapha-twitter]: https://twitter.com/phalado
+[rapha-linkedin]: https://www.linkedin.com/in/raphael-cordeiro/
+[rapha-personal]: https://www.phalado.tech/
